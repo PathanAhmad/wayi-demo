@@ -123,11 +123,13 @@
 
   /* ===== AI-COACH comparison: one question, two learners, two answers =====
      Same question, two emotionally-intelligent replies. 哇一 reads how each learner
-     is doing (the mood chip) and answers accordingly: gentle and minimal for the one
-     having a hard time, crisp with a stretch for the one flying. The answers render
-     exactly as the product does (features/learn/tutor): a neutral bubble, GFM Markdown
-     plus real KaTeX for the maths, an AIGC chip beneath. The cards sit at a light tilt.
-     Class family is duo-* to stay clear of #s-notebook .coach; bars stay .bars .bar. */
+     is doing and answers accordingly: gentle and minimal for the one having a hard
+     time, crisp with a stretch for the one flying. The answers render the way the
+     product does (features/learn/tutor): a neutral bubble, GFM Markdown + real KaTeX.
+     The "read them" pill reveals the product's own Emotion Analytics panel (Spark-OS
+     AdvancedEmotionTestPanel): primary emotion + confidence, a sentiment gauge, the
+     reframed Advanced-Emotion bars, and an inference line. Cards sit at a light tilt.
+     Class family is duo-*/ea-* to stay clear of #s-notebook .coach; bars stay .bars .bar. */
   .duo-stage { width: min(1140px, 92vw); margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
 
   /* the shared question, asked once, above both columns (the learner's own words, plain) */
@@ -137,8 +139,8 @@
   #deck[data-lang="zh"] .ask-shared .lead { letter-spacing: 0.22em; }
   .ask-q { max-width: 640px; font-size: 15.5px; line-height: 1.55; padding: 12px 20px; border-radius: var(--r-input); background: var(--surface-2); border: 1px solid var(--hairline); color: var(--content); }
 
-  /* two learner columns, each tilted a touch for a casual, hand-placed feel */
-  .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: start; }
+  /* two learner columns, equal height (stretch) so the two chats read as the same size */
+  .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: stretch; }
   .duo { position: relative; background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-tile); padding: 18px 18px 15px; display: flex; flex-direction: column; gap: 13px; box-shadow: var(--shadow-md); }
   .tilt-l { transform: rotate(-1.3deg); }
   .tilt-r { transform: rotate(1.3deg); }
@@ -155,8 +157,9 @@
   .dot-warm { background: var(--primary); }
   .dot-flow { background: var(--success); }
 
-  /* 哇一's answer bubble: the SAME look the product renders (neutral surface, tail bottom-left) */
-  .bubble { align-self: stretch; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: var(--r-tile); border-bottom-left-radius: 5px; padding: 13px 15px; color: var(--content); font-size: 13.5px; line-height: 1.62; }
+  /* 哇一's answer bubble: the SAME look the product renders (neutral surface, tail bottom-left).
+     flex:1 so both bubbles fill their equal-height cards and the two chats match in size. */
+  .bubble { align-self: stretch; flex: 1 1 auto; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: var(--r-tile); border-bottom-left-radius: 5px; padding: 13px 15px; color: var(--content); font-size: 13.5px; line-height: 1.62; }
   .bubble > :first-child { margin-top: 0; }
   .bubble > :last-child { margin-bottom: 0; }
   .bubble p { margin: 7px 0; }
@@ -166,15 +169,11 @@
   .bubble .katex-display { margin: 10px 0; }
   .bubble .katex { font-size: 1.05em; }
 
-  /* the compliance footnote + the "read them" pill sit on one quiet row under the bubble */
-  .undertone { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-  .aigc { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; color: var(--faint); letter-spacing: 0.02em; }
-  .aigc::before { content: "✦"; color: var(--primary); font-size: 11px; }
-
   .chem { font-family: var(--sci); }
   .chem sub { font-size: 0.68em; vertical-align: -0.25em; }
 
-  /* the clickable "read them" pill + the metrics panel it reveals */
+  /* the "read them" pill sits on its own quiet row under the bubble */
+  .undertone { display: flex; align-items: center; }
   .reveal { display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--accent); background: transparent; border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent); border-radius: var(--r-pill); padding: 6px 13px; transition: background .15s; }
   .reveal:hover { background: var(--accent-tint); }
   .reveal .chev { transition: transform .2s ease; }
@@ -183,25 +182,53 @@
   .reveal[aria-expanded="true"] .lbl-open { display: inline; }
   .reveal[aria-expanded="true"] .lbl-shut { display: none; }
 
-  .metrics { display: none; border: 1px solid var(--hairline); border-radius: 12px; background: var(--surface-2); padding: 15px 16px; }
-  .metrics.open { display: flex; flex-direction: column; gap: 13px; animation: fade .28s ease both; }
-  .m-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
-  .m-title { font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
-  .m-primary { font-size: 13px; font-weight: 700; color: var(--content); }
-  .m-conf { font-size: 11px; color: var(--faint); font-variant-numeric: tabular-nums; }
+  /* ===== the Emotion Analytics panel (recreated from Spark-OS AdvancedEmotionTestPanel) =====
+     Data marks carry the product's own purple/coral analytics colours; everything else
+     stays on the deck's neutral tokens. */
+  .metrics { --ea-purple: #a98fd6; --ea-coral: #ff7f7e; --ea-track: color-mix(in srgb, var(--content) 12%, transparent);
+             display: none; border: 1px solid var(--hairline); border-radius: 12px; background: var(--surface-2); padding: 14px 15px; }
+  #deck[data-theme="light"] .metrics { --ea-purple: #7c59b2; --ea-coral: #ff6e6d; }
+  .metrics.open { display: flex; flex-direction: column; gap: 12px; animation: fade .28s ease both; }
+  .ea-head { display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+  .ea-brain { font-size: 13px; }
 
-  .bars { display: flex; flex-direction: column; gap: 8px; }
-  .bars .bar { display: grid; grid-template-columns: 92px 1fr 30px; align-items: center; gap: 10px; }
-  .bars .bar .bl { font-size: 11.5px; color: var(--muted); }
-  .bars .bar .bt { height: 7px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--content) 10%, transparent); overflow: hidden; }
-  .bars .bar .bf { display: block; height: 100%; border-radius: var(--r-pill); }
+  /* primary emotion + confidence, two rounded sub-cards side by side */
+  .ea-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+  .ea-cell { display: flex; flex-direction: column; gap: 6px; padding: 9px 11px; border: 1px solid var(--hairline); border-radius: 9px; background: var(--surface); }
+  .ea-conf-cell { align-items: center; justify-content: center; min-width: 84px; }
+  .ea-k { font-size: 9.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--faint); }
+  .ea-pe { display: inline-flex; align-items: center; gap: 8px; }
+  .ea-face { font-size: 20px; line-height: 1; }
+  .ea-name { font-size: 14px; font-weight: 700; color: var(--content); }
+  .ea-conf { font-size: 26px; font-weight: 800; line-height: 1; color: var(--ea-purple); font-variant-numeric: tabular-nums; }
+  .ea-pct { font-size: 14px; font-weight: 700; }
+
+  /* sentiment gauge (radial needle) + readout */
+  .ea-sent { display: flex; align-items: center; gap: 14px; padding: 4px 2px; }
+  .ea-g { flex: none; }
+  .ea-sread { display: flex; flex-direction: column; gap: 1px; }
+  .ea-sval { font-size: 20px; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .ea-scls { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; }
+  .ea-ssub { font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); margin-top: 2px; }
+  .ea-pos { color: var(--ea-purple); }
+  .ea-neg { color: var(--ea-coral); }
+
+  /* advanced-emotion bars (the reframed target-state dimensions) */
+  .ea-sec { font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+  .ea-adv { display: flex; flex-direction: column; gap: 8px; }
+  .bars { display: flex; flex-direction: column; gap: 7px; }
+  .bars .bar { display: grid; grid-template-columns: 96px 1fr 26px; align-items: center; gap: 10px; }
+  .bars .bar .bl { font-size: 11px; color: var(--muted); }
+  .bars .bar .bt { height: 8px; border-radius: var(--r-pill); background: var(--ea-track); overflow: hidden; }
+  .bars .bar .bf { display: block; height: 100%; border-radius: var(--r-pill); min-width: 3%; transition: width .5s ease-out; }
+  .bars .bar .bf.hi { background: var(--ea-purple); }
+  .bars .bar .bf.lo { background: var(--ea-coral); }
   .bars .bar .bv { font-size: 11px; color: var(--faint); text-align: right; font-variant-numeric: tabular-nums; }
 
-  .trend { display: flex; align-items: center; gap: 11px; }
-  .trend .tl { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); flex: none; }
-  .trend svg { display: block; }
-
-  .m-tie { font-size: 12px; line-height: 1.55; color: var(--content); border-left: 3px solid var(--hairline-strong); padding: 2px 0 2px 11px; }
+  /* the inference line: what the read led 哇一 to do */
+  .ea-inf { display: flex; flex-direction: column; gap: 4px; border-left: 3px solid var(--ea-purple); padding: 2px 0 2px 11px; }
+  .ea-inf-k { font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .ea-inf-t { font-size: 12px; line-height: 1.55; color: var(--content); }
 
   /* ===== placeholder sections (until ported) ===== */
   .todo { max-width: 1120px; margin: 0 auto; border: 1.5px dashed var(--hairline-strong); border-radius: var(--r-card); padding: 60px 30px; text-align: center; color: var(--muted); background: var(--surface); }
