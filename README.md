@@ -6,9 +6,9 @@ so it stays out of search results.
 
 The deck is three files, not one:
 
-- `index.html` — markup
-- `styles.css` — styles
-- `deck.js` — behaviour (fit engine, slide navigation, theme/language toggles)
+- `index.html`: markup
+- `styles.css`: styles
+- `deck.js`: behaviour (fit engine, slide navigation, theme/language toggles)
 
 This is a mirror. The canonical, version-controlled source lives in a private
 repository. Do not edit here; update the source and re-sync.

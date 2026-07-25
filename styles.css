@@ -1,7 +1,7 @@
   html, body { margin: 0; padding: 0; }
   body { background: #1c1917; }
   /* ===================================================================
-     Wayi AI · demo deck — a slideshow shell wrapping the product screens.
+     Wayi AI · demo deck: a slideshow shell wrapping the product screens.
      Two global axes: THEME (dark/light) and LANG (en/zh), both on #deck.
      Token values are the real design-system learner palette
      (packages/ui/src/tokens.css): dark = the shipped unit-player register,
@@ -366,7 +366,7 @@
      so all three fit to one size. */
   #s-circuit { padding: 43px 0; }
 
-  /* the narrated-prose column — a mirror of #s-adaptive's, kept in step by hand */
+  /* the narrated-prose column, a mirror of #s-adaptive's, kept in step by hand */
   #s-circuit .well { padding: 30px 26px; height: 540px; overflow-y: auto; display: flex; flex-direction: column; justify-content: safe center; }
   #s-circuit .meter > i { transition: width .4s cubic-bezier(.22,1,.36,1); }
   #s-circuit .pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 46px; align-items: start; max-width: 1080px; margin: 0 auto; width: 100%; min-height: 380px; }
@@ -699,7 +699,7 @@
   }
 
   /* ===================================================================
-     0 · cover — the centered Wayi opening. One scaled child (.cover) for
+     0 · cover: the centered Wayi opening. One scaled child (.cover) for
      the fit engine; the logomark is injected into .cv-logo by the deck's
      logo injector. Motion lives on inner elements so it never fights the
      fit transform, and folds away under prefers-reduced-motion.

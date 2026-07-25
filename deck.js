@@ -1,4 +1,4 @@
-/* Wayi AI demo deck — behaviour: fit engine, slide nav,
+/* Wayi AI demo deck, behaviour: fit engine, slide nav,
    theme/lang toggles, and the logo injector. Extracted from the
    five inline blocks that used to live at the bottom of index.html,
    kept in original order so timing is unchanged. */
@@ -15,7 +15,7 @@
   // mid-demo language switch re-renders in place.
   function buildLesson(zh) {
     return {
-      // Lena: brand new — the text explains what a loop even is; she runs the simplest loop to see it.
+      // Lena: brand new, the text explains what a loop even is; she runs the simplest loop to see it.
       lena: {
         pos: '4 / 9', meterPct: 44,
         blocks: [
@@ -42,7 +42,7 @@
           ok: zh ? '说了 3 次“你好”' : 'said hello 3 times'
         }
       },
-      // Marco: already codes — he skips "what a loop is" and *uses* a loop to build a shape.
+      // Marco: already codes, so he skips "what a loop is" and *uses* a loop to build a shape.
       marco: {
         pos: '2 / 5', meterPct: 40,
         blocks: [
@@ -87,7 +87,7 @@
   var ICON_PLAY = '<path d="M8 5v14l11-7z"/>';
   var ICON_PAUSE = '<path d="M7 5h3v14H7zM14 5h3v14h-3z"/>';
 
-  // build waveform bars once (varied heights, deterministic — no Math.random)
+  // build waveform bars once (varied heights, deterministic, no Math.random)
   for (var bi = 0; bi < WAVE_BARS; bi++) {
     var h = 30 + Math.round(60 * Math.abs(Math.sin(bi * 0.7) * Math.cos(bi * 0.31)));
     var bar = document.createElement('span');
@@ -637,14 +637,14 @@
 })();
 
 
-/* ===== GUARDIAN portal (02): the evening note a parent reads — laptop + phones + day modal ===== */
+/* ===== GUARDIAN portal (02): the evening note a parent reads: laptop + phones + day modal ===== */
 (function () {
   var deck = document.getElementById('deck');
   var root = document.getElementById('s-guardian');
   if (!deck || !root) return;
   function id(x) { return document.getElementById(x); }
 
-  // avatar colours are IDENTITY ONLY (like contact avatars) — the app itself uses one accent
+  // avatar colours are IDENTITY ONLY (like contact avatars); the app itself uses one accent
   var MEI = '#e0736e', HAO = '#7b74d9';
   var WEEKDAY = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var MONTH = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -654,7 +654,7 @@
   var MONTH_ZH = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
   var WEEKS = 18;
 
-  var anchor = new Date(2026, 6, 24); // fixed Fri Jul 24 2026 — renders identically every time
+  var anchor = new Date(2026, 6, 24); // fixed Fri Jul 24 2026, renders identically every time
   var anchorKey = key(anchor);
   var zh = deck.dataset.lang === 'zh';
 
@@ -1003,7 +1003,7 @@
     id('gp-mClose').focus();
   }
 
-  // hand-drawn "this week" bar chart — minutes per day, the opened day picked out in the accent
+  // hand-drawn "this week" bar chart: minutes per day, the opened day picked out in the accent
   function renderWeek(kidId, d) {
     var monday = addDays(d, -((d.getDay() + 6) % 7));
     var mins = [], keys = [], future = [], max = 25;
