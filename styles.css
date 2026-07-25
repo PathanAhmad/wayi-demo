@@ -827,10 +827,7 @@
   .tk-foot svg { flex: none; color: var(--primary); }
   .tk-foot span { max-width: 62em; }
 
-  /* Homework Lab gets its own slide: name + value points on the left, the live board on the right */
-  #s-homework { width: 1040px; }
-  #s-homework .tk-head { margin-bottom: 26px; }
-  #s-homework .tk-hero { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  /* Homework Lab hero: name + value points on the left, the live board on the right */
   .hl-points { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 13px; }
   .hl-points li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 11px; align-items: start; font-size: 14.5px; line-height: 1.5; color: var(--muted); }
   .hl-points li svg { width: 18px; height: 18px; margin-top: 2px; color: var(--tone, var(--accent)); }
