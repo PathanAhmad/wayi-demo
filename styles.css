@@ -729,3 +729,59 @@
     .cv-glow, .spk, .cv-logo, .cv-brand, .cv-title, .cv-sub {
       animation: none !important; opacity: 1 !important; transform: none !important; }
   }
+
+  /* ===================================================================
+     TOOLKIT slide: "more than lessons". A centered header over a tool
+     grid: Homework Lab is the hero (with a live homework board), then
+     three smaller cards. Same tri-colour accent system as the screens.
+     =================================================================== */
+  #s-toolkit { width: 1180px; }
+  .tk-head { text-align: center; display: grid; justify-items: center; gap: 12px; margin-bottom: 30px; }
+  .tk-head .eyebrow { display: inline-flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .tk-head .eyebrow::before { content: ""; width: 13px; height: 13px; flex: none; background: var(--primary); clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
+  #deck[data-lang="zh"] .tk-head .eyebrow { letter-spacing: 0.28em; }
+  .tk-head h2 { margin: 0; font-size: 42px; font-weight: 700; line-height: 1.12; letter-spacing: -0.015em; color: var(--content); text-wrap: balance; }
+  .tk-head p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--muted); max-width: 38em; }
+
+  .tk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  .tk-card {
+    position: relative; background: var(--surface); border: 1px solid var(--hairline-strong);
+    border-radius: var(--r-tile); padding: 22px 22px 24px; box-shadow: var(--shadow-md);
+    transition: transform .18s ease, border-color .18s ease;
+  }
+  .tk-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--tone, var(--accent)) 55%, var(--hairline-strong)); }
+  .tk-card > h3 { margin: 14px 0 7px; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: var(--content); }
+  .tk-card > p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+
+  .tk-ico {
+    display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 13px;
+    color: var(--tone, var(--accent)); background: color-mix(in srgb, var(--tone, var(--accent)) 15%, transparent);
+  }
+
+  /* hero spans the row: copy on the left, a homework board on the right */
+  .tk-hero { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 30px; align-items: center; padding: 26px 28px; }
+  .tk-hero .tk-copy h3 { margin: 14px 0 8px; font-size: 23px; font-weight: 700; letter-spacing: -0.01em; color: var(--content); }
+  .tk-hero .tk-copy p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); max-width: 24em; }
+
+  .tk-demo { background: var(--surface-2); border: 1px solid var(--hairline); border-radius: calc(var(--r-tile) - 2px); padding: 14px 16px; display: grid; gap: 10px; }
+  .hw-row { display: grid; grid-template-columns: 9px minmax(0, 1fr) auto 88px 40px; align-items: center; gap: 12px; font-size: 13.5px; }
+  .hw-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--d, var(--accent)); }
+  .hw-name { color: var(--content); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hw-due { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .hw-bar { height: 6px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--content) 12%, transparent); overflow: hidden; }
+  .hw-bar > i { display: block; height: 100%; border-radius: var(--r-pill); background: var(--accent); }
+  .hw-row.is-done .hw-bar > i { background: var(--success); }
+  .hw-pct { font-size: 12px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; display: inline-flex; justify-content: flex-end; align-items: center; }
+  .hw-row.is-done .hw-pct { color: var(--success); }
+  .hw-foot { display: flex; align-items: center; gap: 10px; margin-top: 2px; padding-top: 12px; border-top: 1px solid var(--hairline); font-size: 12.5px; line-height: 1.4; color: var(--muted); }
+  .hw-av { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #3e3b3b; background: var(--primary); }
+
+  .tk-more { border-style: dashed; box-shadow: none; background: transparent; display: grid; align-content: center; justify-items: center; text-align: center; gap: 0; }
+  .tk-more .tk-plus { font-size: 30px; font-weight: 300; line-height: 1; color: var(--faint); }
+  .tk-more > h3 { margin: 8px 0 4px; font-size: 16px; color: var(--content); }
+  .tk-more > p { font-size: 13px; color: var(--muted); }
+
+  .tk-foot { display: flex; align-items: center; justify-content: center; gap: 11px; margin-top: 24px; padding: 13px 22px; border: 1px solid var(--hairline); border-radius: var(--r-pill); background: var(--surface-2); color: var(--muted); font-size: 13.5px; line-height: 1.45; }
+  .tk-foot svg { flex: none; color: var(--primary); }
+  .tk-foot span { max-width: 62em; }
