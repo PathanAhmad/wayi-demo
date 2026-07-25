@@ -122,85 +122,60 @@
   .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 #b89412; }
 
   /* ===== AI-COACH comparison: one question, two learners, two answers =====
-     哇一 reads how each learner is really doing and meets them there: the SAME
-     concept, wrapped in warmth for the child having a hard time, sharpened into a
-     challenge for the one flying. The atmosphere (a warm amber wash vs a cool
-     blue one) carries the feeling; the answers show 哇一's full range, from a
-     single gentle step to a worked table plus a stretch. The "read them" pill
-     reveals the metrics; the deck's ResizeObserver refits the slide when it opens.
-     Class family is duo-* (the two-learner duo) to stay clear of #s-notebook .coach. */
-  .duo-stage { width: min(1180px, 92vw); margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+     Same question, two emotionally-intelligent replies. 哇一 reads how each learner
+     is doing (the mood chip) and answers accordingly: gentle and minimal for the one
+     having a hard time, crisp with a stretch for the one flying. The answers render
+     exactly as the product does (features/learn/tutor): a neutral bubble, GFM Markdown
+     plus real KaTeX for the maths, an AIGC chip beneath. The cards sit at a light tilt.
+     Class family is duo-* to stay clear of #s-notebook .coach; bars stay .bars .bar. */
+  .duo-stage { width: min(1140px, 92vw); margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
 
-  /* the shared question, asked once, above both columns */
+  /* the shared question, asked once, above both columns (the learner's own words, plain) */
   .ask-shared { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
   .ask-shared .lead { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: inline-flex; align-items: center; gap: 9px; }
   .ask-shared .lead::before { content: ""; width: 11px; height: 11px; flex: none; background: var(--primary); clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
   #deck[data-lang="zh"] .ask-shared .lead { letter-spacing: 0.22em; }
-  .ask-q { max-width: 660px; font-size: 16px; line-height: 1.55; padding: 13px 22px; border-radius: 16px; background: var(--surface-2); border: 1px solid var(--hairline); color: var(--content); }
+  .ask-q { max-width: 640px; font-size: 15.5px; line-height: 1.55; padding: 12px 20px; border-radius: var(--r-input); background: var(--surface-2); border: 1px solid var(--hairline); color: var(--content); }
 
-  /* two learner columns */
-  .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
-  .duo { position: relative; overflow: hidden; background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-tile); padding: 20px 20px 17px; display: flex; flex-direction: column; gap: 15px; box-shadow: var(--shadow-md); }
-  .duo > * { position: relative; z-index: 1; }
-  /* the emotional wash across the top of each card */
-  .duo::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 148px; pointer-events: none; z-index: 0; }
-  .lane-warm::before { background: radial-gradient(130% 100% at 20% 0, color-mix(in srgb, var(--primary) 28%, transparent), transparent 68%); }
-  .lane-cool::before { background: radial-gradient(130% 100% at 20% 0, color-mix(in srgb, var(--accent) 24%, transparent), transparent 68%); }
-  .lane-warm { border-color: color-mix(in srgb, var(--primary) 30%, var(--hairline)); }
-  .lane-cool { border-color: color-mix(in srgb, var(--accent) 26%, var(--hairline)); }
+  /* two learner columns, each tilted a touch for a casual, hand-placed feel */
+  .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: start; }
+  .duo { position: relative; background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-tile); padding: 18px 18px 15px; display: flex; flex-direction: column; gap: 13px; box-shadow: var(--shadow-md); }
+  .tilt-l { transform: rotate(-1.3deg); }
+  .tilt-r { transform: rotate(1.3deg); }
 
-  /* header: the FULL-BODY mascot as the emotional anchor, who it is speaking to, the mood chip */
-  .duo-top { display: flex; align-items: center; gap: 16px; min-height: 128px; }
-  .mascot { flex: none; width: 116px; height: 128px; position: relative; display: grid; place-items: end center; }
-  /* a soft ground glow so the full figure looks planted in its own atmosphere */
-  .mascot::before { content: ""; position: absolute; left: 50%; bottom: 7px; transform: translateX(-50%); width: 94px; height: 28px; border-radius: 50%; filter: blur(4px); }
-  .lane-warm .mascot::before { background: radial-gradient(ellipse at center, color-mix(in srgb, var(--primary) 50%, transparent), transparent 72%); }
-  .lane-cool .mascot::before { background: radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 48%, transparent), transparent 72%); }
-  .mascot img { position: relative; width: 116px; height: 128px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 5px 11px rgba(0,0,0,0.22)); }
+  /* header: the full-body mascot + who it is speaking to + the one-line emotional read */
+  .duo-top { display: flex; align-items: center; gap: 15px; min-height: 118px; }
+  .mascot { flex: none; width: 108px; height: 118px; position: relative; display: grid; place-items: end center; }
+  .mascot img { width: 108px; height: 118px; object-fit: contain; object-position: bottom center; display: block; filter: drop-shadow(0 5px 11px rgba(0,0,0,0.20)); }
   .duo-id { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
   .duo-name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; color: var(--content); }
   .duo-name .to { font-weight: 600; color: var(--muted); }
-  .mood { font-size: 11.5px; font-weight: 600; color: var(--content); display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border-radius: var(--r-pill); align-self: flex-start; }
+  .mood { font-size: 11.5px; font-weight: 600; color: var(--muted); display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--content) 6%, transparent); align-self: flex-start; }
   .mood .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
-  .mood-warm { background: color-mix(in srgb, var(--primary) 17%, transparent); }
-  .mood-warm .dot { background: var(--primary); }
-  .mood-cool { background: color-mix(in srgb, var(--accent) 15%, transparent); }
-  .mood-cool .dot { background: var(--success); }
+  .dot-warm { background: var(--primary); }
+  .dot-flow { background: var(--success); }
 
-  /* the answer body: 哇一 formatting properly, not a flat line of text */
-  .msg { display: flex; flex-direction: column; gap: 12px; }
-  .msg p { margin: 0; }
-  .lead-line { font-size: 14px; line-height: 1.62; color: var(--content); }
+  /* 哇一's answer bubble: the SAME look the product renders (neutral surface, tail bottom-left) */
+  .bubble { align-self: stretch; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: var(--r-tile); border-bottom-left-radius: 5px; padding: 13px 15px; color: var(--content); font-size: 13.5px; line-height: 1.62; }
+  .bubble > :first-child { margin-top: 0; }
+  .bubble > :last-child { margin-bottom: 0; }
+  .bubble p { margin: 7px 0; }
+  .bubble strong { font-weight: 700; color: var(--content); }
+  .bubble ul { margin: 7px 0; padding-left: 20px; }
+  .bubble li { margin: 3px 0; }
+  .bubble .katex-display { margin: 10px 0; }
+  .bubble .katex { font-size: 1.05em; }
 
-  /* 林 · the struggling learner: one warm highlighted step, a gentle next prompt, a soft closer */
-  .stepnote { background: color-mix(in srgb, var(--primary) 12%, var(--surface-2)); border: 1px solid color-mix(in srgb, var(--primary) 32%, transparent); border-left: 3px solid var(--primary); border-radius: 10px; padding: 11px 14px; display: flex; flex-direction: column; gap: 5px; }
-  .stepnote-k { font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: color-mix(in srgb, var(--primary) 42%, var(--content)); }
-  .stepnote-v { font-size: 15px; line-height: 1.5; color: var(--content); }
-  .ask-next { font-size: 13.5px; line-height: 1.55; color: var(--content); }
-  .ask-next .arr { color: var(--primary); font-weight: 800; margin-right: 5px; }
-  .closer { font-size: 13px; color: var(--muted); }
+  /* the compliance footnote + the "read them" pill sit on one quiet row under the bubble */
+  .undertone { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .aigc { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; color: var(--faint); letter-spacing: 0.02em; }
+  .aigc::before { content: "✦"; color: var(--primary); font-size: 11px; }
 
-  /* 伟 · the learner flying: the full worked table + a stretch challenge card */
-  .worked { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 13.5px; border: 1px solid var(--hairline); border-radius: 10px; overflow: hidden; }
-  .worked td { padding: 9px 14px; border-bottom: 1px solid var(--hairline); }
-  .worked td:first-child { color: var(--muted); }
-  .worked td:last-child { text-align: right; font-family: var(--sci); color: var(--content); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .worked tr:last-child td { border-bottom: 0; }
-  .worked tr.ans td { background: var(--accent-tint); font-weight: 700; }
-  .worked tr.ans td:first-child { color: var(--content); }
-  .worked tr.ans td:last-child { color: var(--accent); }
-
-  .stretch { background: color-mix(in srgb, var(--accent) 10%, var(--surface-2)); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-left: 3px solid var(--accent); border-radius: 10px; padding: 11px 14px; display: flex; flex-direction: column; gap: 5px; }
-  .stretch-k { font-size: 11px; font-weight: 700; letter-spacing: 0.02em; color: color-mix(in srgb, var(--accent) 42%, var(--content)); }
-  .stretch-v { font-size: 13.5px; line-height: 1.55; color: var(--content); }
-
-  .chem, .csci { font-family: var(--sci); }
-  .chem sub, .csci sub { font-size: 0.68em; vertical-align: -0.25em; }
-  .csci sup { font-size: 0.68em; vertical-align: 0.42em; }
-  .csci { white-space: nowrap; }
+  .chem { font-family: var(--sci); }
+  .chem sub { font-size: 0.68em; vertical-align: -0.25em; }
 
   /* the clickable "read them" pill + the metrics panel it reveals */
-  .reveal { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--accent); background: transparent; border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent); border-radius: var(--r-pill); padding: 7px 14px; transition: background .15s; }
+  .reveal { display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--accent); background: transparent; border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent); border-radius: var(--r-pill); padding: 6px 13px; transition: background .15s; }
   .reveal:hover { background: var(--accent-tint); }
   .reveal .chev { transition: transform .2s ease; }
   .reveal[aria-expanded="true"] .chev { transform: rotate(90deg); }
@@ -226,9 +201,7 @@
   .trend .tl { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); flex: none; }
   .trend svg { display: block; }
 
-  .m-tie { font-size: 12px; line-height: 1.55; color: var(--content); border-left: 3px solid var(--accent); padding: 2px 0 2px 11px; }
-  .duo .aigc { align-self: flex-start; }
-  .aigc { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; color: var(--faint); letter-spacing: 0.02em; }
+  .m-tie { font-size: 12px; line-height: 1.55; color: var(--content); border-left: 3px solid var(--hairline-strong); padding: 2px 0 2px 11px; }
 
   /* ===== placeholder sections (until ported) ===== */
   .todo { max-width: 1120px; margin: 0 auto; border: 1.5px dashed var(--hairline-strong); border-radius: var(--r-card); padding: 60px 30px; text-align: center; color: var(--muted); background: var(--surface); }

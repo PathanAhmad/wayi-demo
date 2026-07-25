@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Wayi AI · demo deck</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="katex.css">
 
 <div id="deck" data-theme="dark" data-lang="en">
 
@@ -461,30 +462,29 @@
         <div class="duo-grid">
 
           <!-- LEFT · 林 · having a rough one -->
-          <article class="duo lane-warm">
+          <article class="duo tilt-l">
             <header class="duo-top">
               <span class="mascot"><img src="wayi-pointing.png" alt="哇一" /></span>
               <div class="duo-id">
                 <span class="duo-name">哇一 <span class="to"><span class="en">→ Lín · Grade 9</span><span class="zh">→ 林同学 · 初三</span></span></span>
-                <span class="mood mood-warm"><span class="dot"></span><span class="en">senses a rough patch · going gentle</span><span class="zh">察觉今天有点吃力 · 放慢脚步</span></span>
+                <span class="mood"><span class="dot dot-warm"></span><span class="en">senses a rough patch · going gentle</span><span class="zh">察觉有点吃力 · 放慢脚步</span></span>
               </div>
             </header>
 
-            <div class="msg">
-              <p class="lead-line"><span class="en">No stress. This one trips up a lot of people, so let's take it one tiny step, no memorising. 💛</span><span class="zh">别急，这题很多人都会卡，我们一小步一小步来，不用背。💛</span></p>
-              <div class="stepnote">
-                <span class="stepnote-k"><span class="en">Step 1 · the only thing to hold onto</span><span class="zh">第一步 · 现在只记这一个</span></span>
-                <span class="stepnote-v"><span class="en">Oxygen is almost always <span class="csci">&minus;2</span>.</span><span class="zh">氧几乎总是 <span class="csci">&minus;2</span>。</span></span>
-              </div>
-              <p class="ask-next"><span class="arr">&rarr;</span><span class="en">what do two oxygens come to, added together? Take your time.</span><span class="zh">那两个氧加起来是多少呢？慢慢来。</span></p>
-              <p class="closer"><span class="en">We'll build the rest together. 🌱</span><span class="zh">剩下的我们一起搭。🌱</span></p>
+            <div class="bubble">
+              <p><span class="en">No stress, this one trips up a lot of people. Let's take it one tiny step, no memorising.</span><span class="zh">别急，这题很多人都会卡。我们一小步一小步来，不用背。</span></p>
+              <p><strong><span class="en">Start here:</span><span class="zh">先看这个：</span></strong> <span class="en">oxygen is almost always <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span>. That's the only thing to hold onto for now.</span><span class="zh">氧几乎总是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span>。现在只需记住这一个。</span></p>
+              <p><span class="en">Want to try what two oxygens come to, added together? Take your time. 💛</span><span class="zh">要不要试试两个氧加起来是多少？慢慢来。💛</span></p>
             </div>
 
-            <button class="reveal" aria-expanded="false" aria-controls="m-lin">
-              <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-              <span class="lbl-shut"><span class="en">See how 哇一 read them</span><span class="zh">看看哇一的观察</span></span>
-              <span class="lbl-open"><span class="en">Hide the read</span><span class="zh">收起观察</span></span>
-            </button>
+            <div class="undertone">
+              <span class="aigc">AI-generated · AI 生成</span>
+              <button class="reveal" aria-expanded="false" aria-controls="m-lin">
+                <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                <span class="lbl-shut"><span class="en">See how 哇一 read them</span><span class="zh">看看哇一的观察</span></span>
+                <span class="lbl-open"><span class="en">Hide the read</span><span class="zh">收起观察</span></span>
+              </button>
+            </div>
 
             <div class="metrics" id="m-lin">
               <div class="m-head">
@@ -503,38 +503,38 @@
                 <svg width="122" height="26" viewBox="0 0 122 26" fill="none"><polyline points="2,7 26,9 50,8 74,14 98,18 120,21" stroke="var(--primary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="21" r="3" fill="var(--primary)"/></svg>
               </div>
               <div class="m-tie"><span class="en">Mood's dipping and understanding's still building, so 哇一 slowed right down and softened its tone.</span><span class="zh">情绪在走低、理解还在建立，所以哇一放慢了节奏、语气更温柔。</span></div>
-              <span class="aigc">AI-generated · AI 生成</span>
             </div>
           </article>
 
           <!-- RIGHT · 伟 · in the zone -->
-          <article class="duo lane-cool">
+          <article class="duo tilt-r">
             <header class="duo-top">
               <span class="mascot"><img src="wayi-victory.png" alt="哇一" /></span>
               <div class="duo-id">
                 <span class="duo-name">哇一 <span class="to"><span class="en">→ Wěi · Grade 9</span><span class="zh">→ 伟同学 · 初三</span></span></span>
-                <span class="mood mood-cool"><span class="dot"></span><span class="en">senses they're flying · pushing on</span><span class="zh">察觉状态正好 · 顺势加压</span></span>
+                <span class="mood"><span class="dot dot-flow"></span><span class="en">in flow · adding a challenge</span><span class="zh">状态正好 · 加一点挑战</span></span>
               </div>
             </header>
 
-            <div class="msg">
-              <p class="lead-line"><span class="en">Nice, you've basically got the tools already. Here it is end to end:</span><span class="zh">不错，工具你其实都有了。完整过一遍：</span></p>
-              <table class="worked">
-                <tr><td><span class="en">Oxygen (&times;2)</span><span class="zh">氧（&times;2）</span></td><td><span class="csci">2&times;(&minus;2) = &minus;4</span></td></tr>
-                <tr><td><span class="en">Neutral molecule</span><span class="zh">中性分子</span></td><td><span class="en">sums to <span class="csci">0</span></span><span class="zh">加起来为 <span class="csci">0</span></span></td></tr>
-                <tr class="ans"><td><span class="en">So sulfur (S)</span><span class="zh">所以硫（S）</span></td><td><span class="csci">&plus;4</span></td></tr>
-              </table>
-              <div class="stretch">
-                <span class="stretch-k"><span class="en">⚡ Stretch · ready for a harder one?</span><span class="zh">⚡ 进阶 · 来个更难的？</span></span>
-                <span class="stretch-v"><span class="en">The sulfate ion <span class="csci">SO<sub>4</sub><sup>2&minus;</sup></span> sums to <span class="csci">&minus;2</span>, not 0. What's S there?</span><span class="zh">硫酸根 <span class="csci">SO<sub>4</sub><sup>2&minus;</sup></span> 加起来是 <span class="csci">&minus;2</span>，不是 0。那里的硫是多少？</span></span>
-              </div>
+            <div class="bubble">
+              <p><span class="en">Nice, you've basically got the tools already. Here it is:</span><span class="zh">不错，工具你其实都有了。这样看：</span></p>
+              <ul>
+                <li><span class="en">Oxygen is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span>, and there are two of them</span><span class="zh">氧是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span>，而且有两个</span></li>
+                <li><span class="en">A neutral molecule sums to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span><span class="zh">中性分子加起来为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span></li>
+              </ul>
+              <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>2</mn><mo>×</mo><mo stretchy="false">(</mo><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">2 \times (-2) = -4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">4</span></span></span></span></span>
+              <p><span class="en">so <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">S</mi><mo>=</mo><mo>+</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\mathrm{S} = +4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathrm">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">4</span></span></span></span>.</span><span class="zh">所以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">S</mi><mo>=</mo><mo>+</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\mathrm{S} = +4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathrm">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">4</span></span></span></span>。</span></p>
+              <p><strong><span class="en">Stretch:</span><span class="zh">进阶：</span></strong> <span class="en">the sulfate ion <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">S</mi><msubsup><mi mathvariant="normal">O</mi><mn>4</mn><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\mathrm{SO_4^{2-}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1205em;vertical-align:-0.2663em;"></span><span class="mord"><span class="mord mathrm">S</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8542em;"><span style="top:-2.4337em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">4</span></span></span><span style="top:-3.1031em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span></span></span></span></span> sums to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span>, not <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. What's S there?</span><span class="zh">硫酸根 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">S</mi><msubsup><mi mathvariant="normal">O</mi><mn>4</mn><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\mathrm{SO_4^{2-}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1205em;vertical-align:-0.2663em;"></span><span class="mord"><span class="mord mathrm">S</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8542em;"><span style="top:-2.4337em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">4</span></span></span><span style="top:-3.1031em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span></span></span></span></span> 加起来是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span>，不是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>。那里的硫是多少？</span></p>
             </div>
 
-            <button class="reveal" aria-expanded="false" aria-controls="m-wei">
-              <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-              <span class="lbl-shut"><span class="en">See how 哇一 read them</span><span class="zh">看看哇一的观察</span></span>
-              <span class="lbl-open"><span class="en">Hide the read</span><span class="zh">收起观察</span></span>
-            </button>
+            <div class="undertone">
+              <span class="aigc">AI-generated · AI 生成</span>
+              <button class="reveal" aria-expanded="false" aria-controls="m-wei">
+                <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                <span class="lbl-shut"><span class="en">See how 哇一 read them</span><span class="zh">看看哇一的观察</span></span>
+                <span class="lbl-open"><span class="en">Hide the read</span><span class="zh">收起观察</span></span>
+              </button>
+            </div>
 
             <div class="metrics" id="m-wei">
               <div class="m-head">
@@ -553,7 +553,6 @@
                 <svg width="122" height="26" viewBox="0 0 122 26" fill="none"><polyline points="2,20 26,18 50,15 74,11 98,7 120,4" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="4" r="3" fill="var(--success)"/></svg>
               </div>
               <div class="m-tie"><span class="en">Riding high and grasping it fast, so 哇一 confirmed quickly and raised the bar.</span><span class="zh">状态高涨、掌握很快，所以哇一快速确认并加了难度。</span></div>
-              <span class="aigc">AI-generated · AI 生成</span>
             </div>
           </article>
 
