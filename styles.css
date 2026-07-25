@@ -363,7 +363,7 @@
   #s-circuit .callout-tag { flex: none; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-tint); border-radius: var(--r-pill); padding: 2px 9px; }
 
   /* the live schematic (right pane) */
-  #s-circuit .dgrampane { display: flex; flex-direction: column; gap: 12px; }
+  #s-circuit .dgrampane { display: flex; flex-direction: column; gap: 12px; align-self: center; }
   #s-circuit .dg-tab { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
   #s-circuit .dg-tab .ldot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); flex: none; }
   #s-circuit .stage { background: var(--sand); border: 1px solid var(--sand-line); border-radius: var(--r-tile); padding: 16px; display: grid; place-items: center; }
