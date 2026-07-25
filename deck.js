@@ -1240,3 +1240,18 @@
   show(0);
   poke();
 })();
+
+(function () {
+  // AI-coach slide: each "read them" pill toggles its metrics panel open/closed.
+  // The deck shell's ResizeObserver refits the slide when the panel changes height,
+  // so there is nothing to recompute here.
+  var pills = document.querySelectorAll('.reveal[aria-controls]');
+  Array.prototype.forEach.call(pills, function (pill) {
+    pill.addEventListener('click', function () {
+      var panel = document.getElementById(pill.getAttribute('aria-controls'));
+      if (!panel) return;
+      var open = panel.classList.toggle('open');
+      pill.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
