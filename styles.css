@@ -828,13 +828,6 @@
     color: var(--tone, var(--accent)); background: color-mix(in srgb, var(--tone, var(--accent)) 15%, transparent);
   }
 
-  /* the "on screen" / "on paper" tag that paints the digital-and-paper split */
-  .tk-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .tk-tag { display: inline-flex; align-items: center; gap: 5px; flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; padding: 4px 10px; border-radius: var(--r-pill); color: var(--muted); background: color-mix(in srgb, var(--content) 6%, transparent); border: 1px solid var(--hairline); }
-  #deck[data-lang="zh"] .tk-tag { text-transform: none; letter-spacing: 0.02em; font-size: 11.5px; }
-  .tk-tag svg { width: 12px; height: 12px; flex: none; }
-  .tk-tag--paper svg { color: color-mix(in srgb, var(--primary) 55%, var(--content)); }
-
   /* hero spans the row: copy on the left, a homework board on the right */
   .tk-hero { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 30px; align-items: center; padding: 26px 28px; }
   .tk-hero .tk-copy h3 { margin: 14px 0 8px; font-size: 23px; font-weight: 700; letter-spacing: -0.01em; color: var(--content); }
