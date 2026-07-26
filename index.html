@@ -570,11 +570,21 @@
      brand twice and introduced nobody. The character waves instead, at figure
      size rather than coin size, and the light that used to fall on the coin
      now falls on it. */
-  #s-intro .cv-wave { position: relative; z-index: 1; width: 226px; aspect-ratio: 313 / 261;
-    background-repeat: no-repeat; background-position: center bottom; background-size: contain;
-    filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.34)); opacity: 0;
+  #s-intro .cv-wave { position: relative; z-index: 1; width: 246px; aspect-ratio: 1 / 0.94;
+    border-radius: 32px; opacity: 0;
+    /* one pale wash with a light sweep through its lower left, the way the
+       artwork was drawn to be seen. Fixed, like the deck fixes paper and
+       hardware: a tile that inverted with the theme would read as a different
+       object on each, and the figure on it is lit one way only. */
+    background-image:
+      radial-gradient(122% 86% at 16% 120%, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0) 58%),
+      linear-gradient(156deg, #f4faff 0%, #dceafb 100%);
+    box-shadow: 0 20px 44px rgba(16, 42, 71, 0.30), 0 0 0 1px rgba(31, 74, 122, 0.10);
     animation: cvMarkIn 1s .18s cubic-bezier(.2, .7, .2, 1) forwards, cvFloat 5s 1.2s ease-in-out infinite; }
 
+
+  #s-intro .cv-wave .wayi-wave { position: absolute; inset: 6% 6% 0; display: block;
+    background-repeat: no-repeat; background-position: center bottom; background-size: contain; }
 
   #s-intro .cv-brand { position: relative; z-index: 1; margin-top: 30px; font-size: 13px; font-weight: 600;
     letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
@@ -602,7 +612,7 @@
   @media (max-width: 780px) { #s-intro .spark { display: none; } }
   @media (max-width: 720px) {
     #s-intro { width: 540px; }
-    #s-intro .cv-wave { width: 176px; }
+    #s-intro .cv-wave { width: 196px; }
     #s-intro .cv-title { font-size: 40px; }
     #deck[data-lang="zh"] #s-intro .cv-title { font-size: 46px; }
   }
@@ -1653,7 +1663,7 @@
         <span class="spark s1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0.8 L14.1 9.4 L23.2 12 L14.1 14.6 L12 23.2 L9.9 14.6 L0.8 12 L9.9 9.4 Z"/></svg></span>
         <span class="spark s2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0.8 L14.1 9.4 L23.2 12 L14.1 14.6 L12 23.2 L9.9 14.6 L0.8 12 L9.9 9.4 Z"/></svg></span>
         <span class="spark s3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0.8 L14.1 9.4 L23.2 12 L14.1 14.6 L12 23.2 L9.9 14.6 L0.8 12 L9.9 9.4 Z"/></svg></span>
-        <span class="cv-wave wayi-wave" role="img" aria-label="哇一 · Wayi AI"></span>
+        <span class="cv-wave" role="img" aria-label="哇一 · Wayi AI"><i class="wayi-wave"></i></span>
         <span class="cv-brand"><span class="en">Wayi AI · 哇一</span><span class="zh">哇一 · Wayi AI</span></span>
         <h1 class="cv-title">
           <span class="en">Help your child <span class="hl">truly understand</span>, not just finish.</span>
