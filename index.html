@@ -487,11 +487,41 @@
     text-transform: uppercase; color: var(--accent); }
   #deck[data-lang="zh"] #s-title .ti-state { letter-spacing: 0.18em; text-transform: none; font-size: 15px; }
 
-  #s-title > * { animation: ti-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-  #s-title > *:nth-child(1) { animation-delay: 0.06s; }
-  #s-title > *:nth-child(2) { animation-delay: 0.16s; }
-  #s-title > *:nth-child(3) { animation-delay: 0.24s; }
-  #s-title > *:nth-child(4) { animation-delay: 0.36s; }
+  /* the opening carried no mark and no field: the deck's own logo was missing
+     from the one slide that introduces it, and flat dark behind centred text
+     reads as an unstyled first page rather than a title card. The type is
+     untouched — it was already the considered part. */
+  #s-title .ti-glow { position: absolute; left: 50%; top: 4%; width: 640px; height: 640px;
+    transform: translateX(-50%); border-radius: 50%; pointer-events: none; z-index: 0;
+    background: radial-gradient(circle,
+      color-mix(in srgb, var(--accent) 14%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 5%, transparent) 38%, transparent 66%);
+    animation: ti-breathe 7.5s ease-in-out infinite; }
+  #s-title > *:not(.ti-glow) { position: relative; z-index: 1; }
+  /* the mark is drawn dark, so it rides a white disc in either theme — the same
+     way the closing slide carries it. On --surface it disappeared into the card. */
+  #s-title .ti-mark { display: grid; place-items: center; width: 86px; height: 86px;
+    margin-bottom: 30px; padding: 11px; border-radius: 50%; background: #ffffff;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20),
+      0 0 0 1px color-mix(in srgb, var(--primary) 36%, transparent); }
+  #s-title .ti-mark svg { width: 100%; height: 100%; display: block; }
+  #s-title .ti-spark { position: absolute; display: block; color: var(--primary);
+    pointer-events: none; z-index: 1; }
+  #s-title .ti-spark svg { width: 100%; height: 100%; display: block; fill: currentColor; }
+  #s-title .ti-spark.a { width: 19px; height: 19px; left: 11%; top: 30%; opacity: 0.85; }
+  #s-title .ti-spark.b { width: 13px; height: 13px; right: 14%; top: 46%; opacity: 0.8; }
+  @keyframes ti-breathe { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+
+  /* keyed by name, not position, so adding to the card cannot silently
+     re-order the cascade the way nth-child would */
+  #s-title > *:not(.ti-glow) { animation: ti-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  #s-title .ti-mark { animation-delay: 0.04s; }
+  #s-title .ti-spark.a { animation-delay: 0.30s; }
+  #s-title .ti-spark.b { animation-delay: 0.42s; }
+  #s-title .ti-event { animation-delay: 0.14s; }
+  #s-title .ti-rule { animation-delay: 0.24s; }
+  #s-title .ti-name { animation-delay: 0.32s; }
+  #s-title .ti-state { animation-delay: 0.44s; }
   @keyframes ti-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { #s-title > * { animation: none; } }
 
@@ -1604,6 +1634,10 @@
     <!-- 0 · title card -->
     <section class="slide active" data-slide="title">
       <div id="s-title">
+        <span class="ti-glow" aria-hidden="true"></span>
+        <span class="ti-spark a" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0.8 L14.1 9.4 L23.2 12 L14.1 14.6 L12 23.2 L9.9 14.6 L0.8 12 L9.9 9.4 Z"/></svg></span>
+        <span class="ti-spark b" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0.8 L14.1 9.4 L23.2 12 L14.1 14.6 L12 23.2 L9.9 14.6 L0.8 12 L9.9 9.4 Z"/></svg></span>
+        <span class="ti-mark wayi-logo" role="img" aria-label="Wayi AI · 哇一"></span>
         <span class="ti-event"><span class="en">The Revolution Innovation EdTech 2026</span><span class="zh">2026 教育科技创新变革大会</span></span>
         <span class="ti-rule"></span>
         <h1 class="ti-name"><span class="en">Wayi AI OS Platform</span><span class="zh">哇一 AI OS 平台</span></h1>
