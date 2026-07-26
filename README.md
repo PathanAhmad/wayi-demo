@@ -1,14 +1,19 @@
 # wayi-demo (hosting mirror)
 
-Public, unlisted host for the Wayi AI product demo deck so it can be opened by
-link and refreshed in a browser. Marked `noindex` and disallowed in `robots.txt`
-so it stays out of search results.
+The Wayi AI demo deck, served at https://pathanahmad.github.io/wayi-demo/.
 
-The deck is three files, not one:
+## Why it's a single file (please keep it that way)
 
-- `index.html`: markup
-- `styles.css`: styles
-- `deck.js`: behaviour (fit engine, slide navigation, theme/language toggles)
+`index.html` is the whole deck: markup, styles, script, mascots and scan
+codes, with nothing fetched over the network. That is deliberate. The deck is
+presented in rooms with bad wifi and handed around as a file, so it has to
+open by double-click and render identically offline. Splitting it, or moving
+an asset out to a URL, breaks the one property it is built for.
 
-This is a mirror. The canonical, version-controlled source lives in a private
-repository. Do not edit here; update the source and re-sync.
+It is authored in the Spark-Evolved monorepo at `docs/demo/wayi-demo-deck.html`
+and copied here to publish. Edit it there, not here.
+
+## Not indexed
+
+`robots.txt` and a `noindex` meta keep this out of search. It is a demo shown
+to people who were given the link, not a public page.
